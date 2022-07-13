@@ -1,0 +1,27 @@
+{
+    "name": "mswiege/picolock",
+    "type": "pico-plugin",
+    "description": "A simple "hide your Pico CMS website behind a password" plugin.",
+    "keywords": [ "pico", "picocms", "picocms-plugin", "password" ],
+    "homepage": "https://github.com/mswiege/picolock",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/mswiege/picolock/graphs/contributors"
+        }
+    ],
+    "support": {
+        "docs": "https://github.com/mswiege/picolock",
+        "issues": "https://github.com/mswiege/picolock/issues",
+        "source": "https://github.com/mswiege/picolock"
+    },
+    "require": {
+        "php": ">=5.3.6",
+        "ext-json": "*",
+        "picocms/pico": "^2.1"
+    },
+    "autoload": {
+        "classmap": [ "PicoLock.php" ]
+    }
+}

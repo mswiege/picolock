@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8"/>
+    <title>Login - {{ site_title }}</title>
+    <link rel="stylesheet" href="{{ base_url }}/plugins/PicoLock/assets/PicoLock.css" type="text/css"/>
+    <meta name="robots" content="noindex, nofollow"/>
+</head>
+<body>
+    <div id="login">
+        <div class="wrapper">
+            <div class="container">
+                <div class="intro">
+                    {% if login_message %}
+                        <h1>{{ login_message }}</h1>
+                        {% if login_message == 'No password set!' %}
+                            <p>You should add your password to Pico's configuration file <code>config/config.yml</code>.</p>
+                            <pre># Password
+PicoLock:
+    password: SHA512-HASHED-PASSWORD</pre>
+                            <p>NOTE: The plugin is using `SHA-512` hash of your password instead of raw password<br/> (you can use <a href="https://sha512.online/" target="_blank">this website</a> or any other tool to create it).</p>
+                        {% endif %}
+                    {% else %}
+                        <h1>{{ site_title }} Login</h1>
+                    {% endif %}
+                </div>
+                <br>
+                <form id="login-form" class="form" method="post" action="">
+                    <input type="password" name="password" id="password" placeholder="Password" autofocus="autofocus"/>
+                    <button type="submit" id="login-button" value="Login">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
